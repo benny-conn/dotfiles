@@ -4,10 +4,10 @@ vim
 sudo
 protobuf-compiler
 openssl
-node
+nodejs
 npm
 make
-i3-gaps
+i3
 i3blocks
 feh
 rofi
