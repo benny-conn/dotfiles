@@ -17,7 +17,7 @@ sudo apt remove docker docker-engine docker.io containerd runc
 # install docker
 
 curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
+sudo sh get-docker.sh
 
 # set up repo for i3
 
@@ -48,3 +48,37 @@ ln -s ~/.dotfiles/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.zshrc.pre-oh-my-zsh ~/.zshrc.pre-oh-my-zsh
 ln -s ~/.dotfiles/.fehbg ~/.fehbg
+
+
+# setup git 
+
+git config --global user.name "bennycio"
+git config --global user.email benny@bennyc.io
+git config --global core.editor vim
+
+ssh-keygen -t rsa -b 4096 -C "benny@bennyc.io"
+ssh-add ~/.ssh/id_rsa
+pub=`cat ~/.ssh/id_rsa.pub`
+
+read -s -p "Enter github password for user bennycio: " githubpass
+curl -u "bennycio:$githubpass" -X POST -d "{\"title\":\"`hostname`\",\"key\":\"$pub\"}" https://api.github.com/user/keys
+
+
+# setup workspace
+
+mkdir ~/workspace
+
+cd ~/workspace
+
+git clone git@github.com:bennycio/bundle.git
+
+git clone git@github.com:bennycio/canna-kool-admin-client.git
+
+git clone git@github.com:bennycio/canna-kool-site.git
+
+git clone git@github.com:bennycio/material-ui-pro.git
+
+cd ~/workspace/bundle
+
+go get github.com/gogo/protobuf/protoc-gen-gofast
+
