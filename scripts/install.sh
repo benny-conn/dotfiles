@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cat ~/.dotfiles/pkgs | xargs -t sudo apt-get install -y
+
 rm ~/.config/i3/config
 rm ~/.config/i3/i3blocks.conf
 rm ~/.zshrc
