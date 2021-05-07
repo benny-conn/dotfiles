@@ -56,12 +56,7 @@ ln -s ~/.dotfiles/.zshrc.pre-oh-my-zsh ~/.zshrc.pre-oh-my-zsh
 ln -s ~/.dotfiles/.fehbg ~/.fehbg
 
 
-# setup git 
-
-git config --global user.name "bennycio"
-git config --global user.email benny@bennyc.io
 git config --global core.editor vim
-
 
 
 cd ~/workspace
