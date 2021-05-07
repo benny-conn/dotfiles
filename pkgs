@@ -7,10 +7,8 @@ openssl
 nodejs
 npm
 make
-i3
-i3blocks
-feh
-rofi
 apt-transport-https
 code
 fonts-font-awesome
+regolith-desktop-standard
+regolith-look-pop-os

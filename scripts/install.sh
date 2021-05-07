@@ -30,20 +30,24 @@ sudo apt remove docker docker-engine docker.io containerd runc
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 
+
+sudo add-apt-repository ppa:regolith-linux/release
+
+regolith-look set pop-os
+
 # install apt packages
 cat ~/.dotfiles/pkgs | xargs -t sudo apt-get install -y
 
-rm ~/.config/i3/config
-rm ~/.config/i3/i3blocks.conf
+rm ~/.config/regolith/i3/config
+rm ~/.config/regolith/compton/config
 rm ~/.zshrc
 rm ~/.zshrc.pre-oh-my-zsh
-rm ~/.fehbg
 
-mkdir ~/.config/i3
+mkdir ~/.config/regolith/i3
+mkdir ~/.config/regolith/compton
 
-ln -s ~/.dotfiles/i3/config ~/.config/i3/config
-ln -s ~/.dotfiles/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
+ln -s ~/.dotfiles/i3/config ~/.config/regolith/i3/config
+ln -s ~/.dotfiles/picom/conig ~/.config/regolith/compton/config
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.zshrc.pre-oh-my-zsh ~/.zshrc.pre-oh-my-zsh
-ln -s ~/.dotfiles/.fehbg ~/.fehbg
 
