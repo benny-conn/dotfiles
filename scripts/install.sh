@@ -10,6 +10,12 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
 
+# set up google chrome 
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o ~/Downloads/google-chrome-stable_current_amd64.deb 
+
+sudo apt install ~/Downloads/google-chrome-stable_current_amd64.deb
+
 # remove possible conflictions
 
 sudo apt remove docker docker-engine docker.io containerd runc
@@ -56,17 +62,7 @@ git config --global user.name "bennycio"
 git config --global user.email benny@bennyc.io
 git config --global core.editor vim
 
-ssh-keygen -t rsa -b 4096 -C "benny@bennyc.io"
-ssh-add ~/.ssh/id_rsa
-pub=`cat ~/.ssh/id_rsa.pub`
 
-read -s -p "Enter github password for user bennycio: " githubpass
-curl -u "bennycio:$githubpass" -X POST -d "{\"title\":\"`hostname`\",\"key\":\"$pub\"}" https://api.github.com/user/keys
-
-
-# setup workspace
-
-mkdir ~/workspace
 
 cd ~/workspace
 
