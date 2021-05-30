@@ -29,7 +29,7 @@ sudo apt remove docker docker-engine docker.io containerd runc
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-
+curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
 
 sudo add-apt-repository ppa:regolith-linux/release
 

@@ -5,6 +5,8 @@
 export ZSH="/home/bennycio/.dotfiles/.oh-my-zsh"
 export PATH=$PATH:/usr/local/go/bin:/home/bennycio/go/bin
 export EDITOR="vim"
+export GOROOT="/usr/local/go"
+export GOTOOLDIR="/usr/local/go/pkg/tool/linux_amd64"
 
 alias gs='git status'
 alias ga='git add'
